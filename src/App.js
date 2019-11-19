@@ -3,6 +3,7 @@ import "./App.css";
 import {Route, Switch} from 'react-router-dom';
 import Homepage from "./pages/homepage/homepage.component";
 import ShopPage from './components/shop-page/shop-page.component';
+import Header from './components/header/header.component';
 //
 
 
@@ -19,6 +20,8 @@ import ShopPage from './components/shop-page/shop-page.component';
 function App() {
   return (
     <div>
+      {/* makes header render across all pages */}
+      <Header />
       <Switch>
         <Route exact={true} path='/' component={Homepage} />
         <Route exact={true} path='/shop' component={ShopPage} />

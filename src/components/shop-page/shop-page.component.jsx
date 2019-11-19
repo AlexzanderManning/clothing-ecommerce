@@ -14,11 +14,18 @@ class ShopPage extends React.Component{
   }
 
   render(){
-    const {collections} = this.state;
+    //ES6 way of destructuring
+    // const {collections} = this.state;
+    console.log(this.state.collections);
     return(
       <div className='ShopPage'>
         {
-          collections.map(({id, ...otherCollectionProps}) =>(
+          //ES6 Way of destructuring.
+          // this.state.collections.map(({id, ...otherCollectionProps}) =>(
+          //   <CollectionPreview key={id} {...otherCollectionProps}/>
+          // ))
+
+          this.state.collections.map(({id, ...otherCollectionProps}) =>(
             <CollectionPreview key={id} {...otherCollectionProps}/>
           ))
         }
