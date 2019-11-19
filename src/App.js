@@ -1,14 +1,10 @@
 import React from 'react';
 import "./App.css";
-import Homepage from "./pages/homepage/homepage.component";
-//
 import {Route, Switch} from 'react-router-dom';
+import Homepage from "./pages/homepage/homepage.component";
+import ShopPage from './components/shop-page/shop-page.component';
+//
 
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-);
 
 
 //exact - controls if the url must match exactly to render that component
@@ -25,7 +21,7 @@ function App() {
     <div>
       <Switch>
         <Route exact={true} path='/' component={Homepage} />
-        <Route exact={true} path='/shop/hats' component={HatsPage} />
+        <Route exact={true} path='/shop' component={ShopPage} />
       </Switch>
     </div>
   );
