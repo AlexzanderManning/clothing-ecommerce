@@ -1,9 +1,11 @@
 import React from 'react';
 import "./App.css";
 import {Route, Switch} from 'react-router-dom';
-import Homepage from "./pages/homepage/homepage.component";
-import ShopPage from './components/shop-page/shop-page.component';
+import HomePage from "./pages/homepage/homepage.component";
+import ShopPage from './pages/shop-page/shop-page.component';
 import Header from './components/header/header.component';
+import SignInAndSignUp from './pages/sign-in-sign-up/sign-in-sign-up.component';
+import { auth } from './firebase/firebase.utils';
 //
 
 
@@ -17,17 +19,41 @@ import Header from './components/header/header.component';
 //As long as the route matches onnly that component will render.
 
 
-function App() {
-  return (
-    <div>
-      {/* makes header render across all pages */}
-      <Header />
-      <Switch>
-        <Route exact={true} path='/' component={Homepage} />
-        <Route exact={true} path='/shop' component={ShopPage} />
-      </Switch>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null
+    };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
+      console.log(user);
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
+    return (
+      <div>
+        <Header currentUser={this.state.currentUser} />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route path='/signin' component={SignInAndSignUp} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;

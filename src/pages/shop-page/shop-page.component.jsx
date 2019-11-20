@@ -1,7 +1,7 @@
 import React from 'react';
 import SHOP_DATA from './shop.data';
 import './shop-page.styles.scss';
-import CollectionPreview from '../preview-collection/collection-preview.component';
+import CollectionPreview from '../../components/preview-collection/collection-preview.component';
 
 //Shop is a class component because we need to store the data for our collections on our shop page.
 class ShopPage extends React.Component{
@@ -16,7 +16,6 @@ class ShopPage extends React.Component{
   render(){
     //ES6 way of destructuring
     // const {collections} = this.state;
-    console.log(this.state.collections);
     return(
       <div className='ShopPage'>
         {
