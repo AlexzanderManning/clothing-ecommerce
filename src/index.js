@@ -5,13 +5,18 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'; //Imports React Router
 import { Provider } from 'react-redux';
 import store  from './redux/store';
+import { persistor } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
-console.log(store.getState())
+
 //App has to be wrapped inside Browser router.
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
