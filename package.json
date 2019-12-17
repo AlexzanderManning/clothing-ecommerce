@@ -1,6 +1,10 @@
 {
   "name": "clothing",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.13.1",
+    "npm": "6.13.4"
+  },
   "private": true,
   "dependencies": {
     "firebase": "^7.4.0",
