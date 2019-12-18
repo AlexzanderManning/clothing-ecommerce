@@ -11,26 +11,18 @@ import StripeCheckoutButton from '../../components/stripe-button/stripe-button.c
 const CheckoutPage = ({cartItems, total}) => (
 
   <div className='checkout-page'>
-    <div className='checkout-header'>
-      <div className='header-block'>
-        <span>Product</span>
-      </div>
-      <div className='header-block'>
-        <span>Description</span>
-      </div>
-      <div className='header-block'>
-        <span>Quantity</span>
-      </div>
-      <div className='header-block'>
-        <span>Price</span>
-      </div>
-      <div className='header-block'>
-        <span>Remove</span>
-      </div>
-    </div>
-    {cartItems.map(cartItem => (
+   <h3>Shopping Cart</h3>
+
+    {
+    
+      cartItems.length? 
+
+    cartItems.map(cartItem => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))}
+    ))
+    : <span className = 'empty-message'>Your cart is empty.</span>
+  
+  }
 
     <div className='total'>
       <span>Total : ${total}</span>
@@ -38,6 +30,7 @@ const CheckoutPage = ({cartItems, total}) => (
 
     <div className='test-warning'>
       *Please use the following credit card for payments* 
+      <br></br>
       <br></br>
       4242 4242 4242 4242 - Expiry : 01/20 - CCV: 123
     </div>

@@ -1,27 +1,38 @@
 import React from 'react';
-import './collection-item.styles.scss';
 import { connect } from 'react-redux';
-import CustomButton from '../custom-button/custom.button.component';
+import { Link } from 'react-router-dom';
 
+
+import CustomButton from '../custom-button/custom.button.component';
 import  { addItem } from '../../redux/cart/cart.actions';
+import './collection-item.styles.scss';
 
 const CollectionItem = ({item, addItem}) =>{
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    addItem(item);
+  }
+
   const { imageUrl, name, price} = item;
   return(
-    <div className='collection-item'>
-    <div
-     className='image'
-     style={{backgroundImage: `url(${imageUrl})`}}
-    ></div>
+    <Link to='/'>
+      <div className='collection-item'>
+        <div
+          className='image'
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        ></div>
 
-    <div className='collection-footer'>
-      <span className='name'>{name}</span>
-      <span className='price'>{price}</span>
-    </div>
-    <CustomButton onClick={() => addItem(item)} inverted>
-        Add to cart
-    </CustomButton>
-  </div>
+        <div className='collection-footer'>
+          <span className='name'>{name}</span>
+          <span className='price'>${price}</span>
+        </div>
+        <CustomButton onClick={ handleClick } inverted>
+          Add to cart
+        </CustomButton>
+      </div>
+    </Link>
+    
   ) 
 };
 
