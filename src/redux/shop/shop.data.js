@@ -74,7 +74,7 @@ const SHOP_DATA = {
       {
         id: 11,
         name: 'Adidas Yeezy',
-        imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+        imageUrl: 'https://sneakernews.com/wp-content/uploads/2019/09/adidas-yezy-boost-350-v2-yecheil-0.jpg',
         price: 280
       },
       {
@@ -110,7 +110,8 @@ const SHOP_DATA = {
       {
         id: 17,
         name: 'Timberlands',
-        imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+        imageUrl: 'https://returntonow.net/wp-content/uploads/2019/09/timberlands.jpg',
+        altImage: 'https://www.gearhungry.com/wp-content/uploads/2018/07/best-timberland-shoes-for-men.jpg',
         price: 200
       }
     ]

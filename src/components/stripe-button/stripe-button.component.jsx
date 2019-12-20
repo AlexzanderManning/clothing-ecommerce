@@ -13,10 +13,10 @@ const StripeCheckoutButton = ({price}) => {
   return (
     <StripeCheckout 
       label='Pay Now'
-      name='Drip LLC'
+      name='Drip Clothing'
       billingAddress
       shippingAddress
-      image='https://sendeyo.com/up/d/f3eb2117da'
+      image='https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Letter_d.svg/1200px-Letter_d.svg.png'
       description={`Your total is $${priceForStripe}`}
       panelLabel='Pay Now'
       token={onToken}

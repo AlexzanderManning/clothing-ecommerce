@@ -2,19 +2,19 @@ const INITIAL_STATE = {
   sections: [
     {
       title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      imageUrl: 'https://res.cloudinary.com/haven/image/upload/w_2048/v1574870596/HAVEN-FW19-PrimaLoft-Product-Focus-Web-1_rh82zc.jpg',
       id: 1,
       linkUrl: 'shop/hats'
     },
     {
       title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      imageUrl: 'https://www.freshnessmag.com/.image/t_share/MTU4ODY1NjIyNDMwNjU1Nzcw/the-north-face-mastermind-world-collection-00.jpg',
       id: 2,
       linkUrl: 'shop/jackets'
     },
     {
       title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      imageUrl: 'https://res.cloudinary.com/haven/image/upload/v1575390798/HAVEN-New-Balance-FW19-Editorial-3_zuok2c.jpg',
       id: 3,
       linkUrl: 'shop/sneakers'
     },
@@ -27,7 +27,7 @@ const INITIAL_STATE = {
     },
     {
       title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      imageUrl: 'https://res.cloudinary.com/haven/image/upload/v1576595770/HAVEN-Highlights-FW19-Stone-Island-Shadow-Projects-Web-1_tsfte3.jpg',
       size: 'large',
       id: 5,
       linkUrl: 'shop/mens'
