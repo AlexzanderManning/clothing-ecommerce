@@ -1,23 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 import CustomButton from '../custom-button/custom.button.component';
-import  { addItem } from '../../redux/cart/cart.actions';
+import { addItem } from '../../redux/cart/cart.actions';
+
+
 import './collection-item.styles.scss';
 
-const CollectionItem = ({item, addItem}) =>{
 
-  const handleClick = (e) => {
+class CollectionItem extends React.Component {
+  handleCustomClick = (e) => {
+    const { item, addItem } = this.props;
     e.preventDefault();
     addItem(item);
   }
 
-  const { imageUrl, name, price} = item;
-  return(
-    <Link to='/'>
-      <div className='collection-item'>
+  componentDidUpdate() {
+    window.scrollTo(0, 0)
+  }
+
+
+
+  render() {
+    const { item } = this.props;
+    const { imageUrl, name, price } = item;
+    return (
+      <Link className='collection-item' to={{
+        pathname: `/products/${name}`,
+        state: {
+          productName: name,
+          price: price,
+          imageUrl: imageUrl,
+          item: item
+
+        }
+      }}>
         <div
           className='image'
           style={{ backgroundImage: `url(${imageUrl})` }}
@@ -27,17 +47,17 @@ const CollectionItem = ({item, addItem}) =>{
           <span className='name'>{name}</span>
           <span className='price'>${price}</span>
         </div>
-        <CustomButton onClick={ handleClick } inverted>
+        <CustomButton onClick={this.handleCustomClick} inverted>
           Add to cart
-        </CustomButton>
-      </div>
-    </Link>
-    
-  ) 
-};
+      </CustomButton>
+      </Link>
+
+    )
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });
 
-export default connect(null, mapDispatchToProps) (CollectionItem);
+export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));

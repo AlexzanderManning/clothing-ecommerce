@@ -7,10 +7,10 @@ export const selectCollections = createSelector(
   shop => shop.collections
 );
 
-//converting the object to an array
+//The Object.keys() method returns an array of a given object's own enumerable property names, in the same order as we get with a normal loop.
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  collections => Object.keys(collections).map(key => collections[key])
+  (collections) => Object.keys(collections).map(key => collections[key])
 );
 
 export const selectCollection = collectionURLParam => 
