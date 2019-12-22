@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCollectionsForPreview} from '../../redux/shop/shop.selector';
 
 import  { addItem } from '../../redux/cart/cart.actions';
+import { openCart } from '../../redux/cart/cart.actions';
  
 import './product-page.styles.scss'
 import CustomButton from '../../components/custom-button/custom.button.component';
@@ -26,6 +27,7 @@ class ProductPage extends React.Component{
   handleClick = (e) => {
     const item = this.props.location.state.item;
     this.props.dispatch(addItem(item));
+    this.props.displayCart();
   }
 
   goBack = () => {
@@ -100,6 +102,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
+  displayCart: () => dispatch(openCart()),
   dispatch
 });
 

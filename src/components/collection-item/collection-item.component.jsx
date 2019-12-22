@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 import CustomButton from '../custom-button/custom.button.component';
 import { addItem } from '../../redux/cart/cart.actions';
+import { openCart } from '../../redux/cart/cart.actions';
 
 
 import './collection-item.styles.scss';
@@ -13,9 +14,10 @@ import './collection-item.styles.scss';
 
 class CollectionItem extends React.Component {
   handleCustomClick = (e) => {
-    const { item, addItem } = this.props;
+    const { item, addItem, displayCart } = this.props;
     e.preventDefault();
     addItem(item);
+    displayCart();
   }
 
   componentDidUpdate() {
@@ -57,7 +59,8 @@ class CollectionItem extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  addItem: item => dispatch(addItem(item)),
+  displayCart: () => dispatch(openCart())
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));
