@@ -20,9 +20,7 @@ class App extends React.Component {
   componentDidMount() {
     // const { setCurrentUser } = this.props;
     // setCurrentUser(userAuth);
-    fetch('/test')
-    .then(res => res.text())
-    .then(data => console.log(data));
+    
   }
 
   render() {
