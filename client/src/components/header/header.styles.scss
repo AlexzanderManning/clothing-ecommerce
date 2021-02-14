@@ -1,0 +1,49 @@
+.headerContainer{
+  position: relative;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+@media(max-width:800px) {
+  .headerContainer{
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+
+  @media(max-width:800px) {
+    .logo-container{
+      width: 50px;
+      padding: 0;
+    }
+  }
+
+  .optionsContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  @media(max-width:800px) {
+    .optionsContainer{
+      width: 80%;
+    }
+  }
+
+  .optionLink, .optionDiv {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+

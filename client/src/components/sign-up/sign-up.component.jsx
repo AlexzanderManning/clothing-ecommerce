@@ -3,8 +3,6 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom.button.component';
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
-
 import './sign-up.styles.scss';
 
 class SignUp extends React.Component {
@@ -29,28 +27,13 @@ class SignUp extends React.Component {
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
+    console.log("This is a placeholder for the signup form.")
 
-      await createUserProfileDocument(user, { displayName });
-
-      this.setState({
-        displayName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    alert("I disabled the signup form because I removed firebase.")
   };
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({ [name]: value });
   };
 

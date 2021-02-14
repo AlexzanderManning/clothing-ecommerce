@@ -2,9 +2,9 @@ import React from 'react';
 
 import "./sign-in.styles.scss";
 
-import FormInput from './../form-input/form-input.component';
-import CustomButton from './../custom-button/custom.button.component';
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom.button.component';
+
 
 class SignIn extends React.Component{
   constructor(props){
@@ -28,6 +28,10 @@ class SignIn extends React.Component{
 
   }
 
+  signInWithGoogle = () => {
+    console.log("This is a placeholder for sign in with google.")
+  }
+
   render(){
     return(
       <div className='sign-in'>
@@ -44,7 +48,7 @@ class SignIn extends React.Component{
 
           <div className="buttons">
             <CustomButton type='submit'>Sign In </CustomButton>
-            <CustomButton isGoogleSignIn onClick={signInWithGoogle}>Sign In with Google </CustomButton>
+            <CustomButton isGoogleSignIn onClick={this.signInWithGoogle}>Sign In with Google </CustomButton>
           </div>
           
         </form>
