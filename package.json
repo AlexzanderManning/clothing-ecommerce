@@ -7,6 +7,7 @@
   },
   "private": true,
   "dependencies": {
+    "aws-amplify": "^3.3.18",
     "node-sass": "^4.14.1",
     "persist": "^0.2.7",
     "react": "^16.13.1",
@@ -23,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll --env=jsdom",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8080",
@@ -41,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest-enzyme": "^7.1.2"
   }
 }

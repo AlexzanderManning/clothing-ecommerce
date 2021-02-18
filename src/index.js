@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom'; //Imports React Router
+import { BrowserRouter } from 'react-router-dom'; 
 import { Provider } from 'react-redux';
-import store  from './redux/store';
 import { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import Amplify from "aws-amplify";
+import config from "./aws-exports";
+
+import store from "./redux/store";
+import App from "./App";
+import "./index.css";
+
+//Needed for amplify sign-in flow
+Amplify.configure(config);
 
 
 //App has to be wrapped inside Browser router.
@@ -16,7 +22,6 @@ ReactDOM.render(
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>
-
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Item Component renders to dom without crashing. 1`] = `
+<div
+  className="cart-item"
+>
+  <img
+    alt="item"
+    src="https://i.ibb.co/ZYW3VTp/brown-brim.png"
+  />
+  <div
+    className="item-details"
+  >
+    <span
+      className="name"
+    >
+      Brown Brim
+    </span>
+    <span
+      className="price"
+    >
+      1
+       x $
+      25
+    </span>
+  </div>
+</div>
+`;

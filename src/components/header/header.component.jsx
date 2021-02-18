@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {createStructuredSelector} from 'reselect';
+import { Link } from 'react-router-dom';
 
 
 import Logo from '../logo/logo.component';
@@ -8,13 +9,16 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selector';
+import { signOutCurrentUser } from '../../redux/user/user.actions';
 import './header.styles.scss';
-import { Link } from 'react-router-dom';
 
+//TODO: Add Smoother UI for Signing out. Maybe spinner? or Success message?
+const handleSignout = (cb) => {
+   cb();
+  alert("Signed out!")
+}
 
-const signOut = () => console.log("This is a placeholder for the sign out function!")
-
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden, signOutCurrentUser }) => (
   <div className='headerContainer'>
     <Link className='logoContainer' to='/'>
       <Logo className='logo' />
@@ -24,7 +28,7 @@ const Header = ({ currentUser, hidden }) => (
         SHOP
       </Link>
       {currentUser ? (
-        <div className='optionDiv' onClick={() => signOut()}>
+        <div className='optionDiv' onClick={() => handleSignout(signOutCurrentUser)}>
           SIGN OUT
         </div>
       ) : (
@@ -43,4 +47,4 @@ const mapStateToProps = createStructuredSelector({
   hidden : selectCartHidden
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, { signOutCurrentUser })(Header);
