@@ -1,4 +1,5 @@
 # Drip Clothing
+npm install. npm start.
 
 ## Features
 - Payments using the stripe api.
