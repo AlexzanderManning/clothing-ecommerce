@@ -14,15 +14,15 @@
 
 
 ## Libraries Used
-Reselect - Used for memoization and to select the smallest slice of state possible.
-Redux Persist - Used for session/local storage.
-Redux Logger - For logging state for development.
-Redux - For global state managment across front end application.
-GraphQL - Only query the data we need.
-React Stripe Checkout - Checkout component using the stripe api.
-React Router - For dynamic routing of page components.
-AWS Amplify - For hosting on aws and generating a backend with aws.
-Enzyme - Snapshot testing.
+- Reselect - Used for memoization and to select the smallest slice of state possible.
+- Redux Persist - Used for session/local storage.
+- Redux Logger - For logging state for development.
+- Redux - For global state managment across front end application.
+- GraphQL - Only query the data we need.
+- React Stripe Checkout - Checkout component using the stripe api.
+- React Router - For dynamic routing of page components.
+- AWS Amplify - For hosting on aws and generating a backend with aws.
+- Enzyme - Snapshot testing.
 
 ## Changelog For Version 0.2.0
 - Removed Firebase.
