@@ -1,0 +1,24 @@
+type Collection @model {
+  id: ID!
+  title: String!
+  routename: String!
+	linkUrl: String
+	imageUrl: String
+  items:[Item!]!
+}
+
+type Item @model
+ {
+  id: ID!
+  name: String!
+  imageUrl: String!
+  price: Float!
+  collection: Collection
+}
+
+type Query {
+  collections: [Collection]
+}
+
+
+

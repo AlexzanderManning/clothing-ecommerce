@@ -1,0 +1,89 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-clothingecommerce-dev-162944-authRole",
+      "UnauthRoleArn": "arn:aws:iam::017675430915:role/amplify-clothingecommerce-dev-162944-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::017675430915:role/amplify-clothingecommerce-dev-162944-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-clothingecommerce-dev-162944-deployment",
+      "UnauthRoleName": "amplify-clothingecommerce-dev-162944-unauthRole",
+      "StackName": "amplify-clothingecommerce-dev-162944",
+      "StackId": "arn:aws:cloudformation:us-east-1:017675430915:stack/amplify-clothingecommerce-dev-162944/c2f98d30-6f0b-11eb-a27f-0e2d599e16c7",
+      "AmplifyAppId": "d3op7qp72886va"
+    }
+  },
+  "auth": {
+    "clothingecommerce": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-clothingecommerce-dev-162944-deployment/amplify-cfn-templates/auth/clothingecommerce-cloudformation-template.yml",
+        "logicalId": "authclothingecommerce"
+      },
+      "lastPushTimeStamp": "2021-02-15T22:26:02.204Z",
+      "output": {
+        "UserPoolId": "us-east-1_TXnwa7VO0",
+        "AppClientIDWeb": "56mseedp26u1aj56rfo82i1ca6",
+        "AppClientID": "1bst3m2vh1kgpetbuia86laib5",
+        "IdentityPoolId": "us-east-1:ef6cf400-8d2f-4cbb-8119-bfbc1ec63f38",
+        "IdentityPoolName": "clothingecommerce_identitypool_94c2a5ef__dev",
+        "UserPoolName": "clothingecommerce"
+      },
+      "lastPushDirHash": "2k0jseHlIQqKgVoOB5IcdG3XMK8="
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "clothingecommerce",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ],
+      "lastPushTimeStamp": "2021-02-15T22:26:02.208Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-clothingecommerce-dev-162944-deployment/amplify-cfn-templates/auth/template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "output": {
+        "dripclothingusersGroupRole": "arn:aws:iam::017675430915:role/us-east-1_TXnwa7VO0-dripclothingusersGroupRole"
+      },
+      "lastPushDirHash": "q4VpulSrm/MqnB55A8Wq86gbnL4="
+    }
+  },
+  "api": {
+    "clothingecommerce": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "API Key for product data"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "cxxpsn4ko5hvff77gvzxqdqtfe",
+        "GraphQLAPIEndpointOutput": "https://eamqcwct2venldgowv2r4t2cie.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-uu5i6rt4pjhqnkzfy4pp76bs5q"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-clothingecommerce-dev-162944-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiclothingecommerce"
+      },
+      "lastPushTimeStamp": "2021-02-15T22:26:03.199Z",
+      "lastPushDirHash": "Vttu94asbIijT9At5Lw5UginnHA="
+    }
+  }
+}

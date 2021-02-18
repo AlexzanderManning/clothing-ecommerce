@@ -1,0 +1,63 @@
+{
+    "identityPoolName": "clothingecommerce_identitypool_94c2a5ef",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "clothi29541742",
+    "userPoolName": "clothingecommerce",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
+    "userpoolClientLambdaRole": "clothi29541742_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "29541742",
+    "resourceName": "clothingecommerce",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "serviceName": "Cognito",
+    "usernameAttributes": [
+        "email"
+    ],
+    "useDefault": "default",
+    "userPoolGroups": true,
+    "userPoolGroupList": [
+        "dripclothingusers"
+    ],
+    "adminQueries": false,
+    "usernameCaseSensitive": false,
+    "dependsOn": [],
+    "triggers": "{}",
+    "hostedUI": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "authProviders": []
+}
